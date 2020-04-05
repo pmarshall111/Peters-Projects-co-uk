@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="imageContainer">
+    <img
+      *ngFor="let project of projects, let i = index"
+      [src]=project.imgList[0]
+      (click)="onProjectClick(i)"
+      [ngClass]="(i == selectedProject) ? 'selected' : ''"
+    >
+  </div>
+</div>

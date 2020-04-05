@@ -1,0 +1,20 @@
+section {
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
+section > * {
+  width: 100%
+}
+
+.container {
+  display: grid;
+  place-items: center;
+}
+
+@media (min-width: 800px) {
+  section {
+    grid-template-columns: 40% auto;
+  }
+}

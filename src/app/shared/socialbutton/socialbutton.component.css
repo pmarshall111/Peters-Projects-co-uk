@@ -1,0 +1,41 @@
+div {
+  width: 200px;
+}
+
+img {
+  height: 26px;
+  margin-right: 12px;
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  padding: 12px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: flex;
+  font-size: 17px;
+  line-height: 26px;
+  text-decoration: none; /* remove underline from anchors */
+  font-weight: bold;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.LinkedIn {
+  background-color: #2867b2;
+  color: white;
+}
+
+.GitHub {
+  background-color: #211F1F;
+  color: white;
+}
+
+.Codewars {
+  background-color: black;
+  color: white;
+}
