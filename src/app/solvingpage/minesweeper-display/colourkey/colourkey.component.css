@@ -1,0 +1,14 @@
+.colour-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.colour-display {
+  height: 100%;
+  width: 100%;
+}

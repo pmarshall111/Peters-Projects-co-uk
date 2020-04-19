@@ -7,9 +7,9 @@ import { ProjectpageComponent } from './projectpage/projectpage.component';
 import { ProjectdisplayComponent } from './projectpage/projectdisplay/projectdisplay.component';
 import { ProjectinfoComponent } from './projectpage/projectinfo/projectinfo.component';
 import { ArrowComponent } from './arrow/arrow.component';
-import { IntropageComponent } from './intropage/intropage.component';
-import { SlideshowComponent } from './intropage/slideshow/slideshow.component';
-import { SelectedImageDirective } from './intropage/slideshow/selected-image.directive';
+import { HomepageComponent } from './homepage/homepage.component';
+import { SlideshowComponent } from './homepage/slideshow/slideshow.component';
+import { SelectedImageDirective } from './homepage/slideshow/selected-image.directive';
 import { ProjectcardComponent } from './projectpage/projectcard/projectcard.component';
 import { ImgcarouselComponent } from './projectpage/imgcarousel/imgcarousel.component';
 import { ContactpageComponent } from './contactpage/contactpage.component';
@@ -20,6 +20,11 @@ import {DateSuffixPipe} from './footer/dateSuffix.pipe';
 import {SocialbuttonComponent} from './shared/socialbutton/socialbutton.component';
 import { SolvingpageComponent } from './solvingpage/solvingpage.component';
 import { ProblemdisplayComponent } from './solvingpage/problemdisplay/problemdisplay.component';
+import { SkyscrapersDisplayComponent } from './solvingpage/skyscrapersDisplay/skyscrapersDisplay.component';
+import { SkyscrapersComponent } from './solvingpage/skyscrapers/skyscrapers.component';
+import { MinMaxLimiterDirective } from './shared/min-max-limiter.directive';
+import { MinesweeperDisplayComponent } from './solvingpage/minesweeper-display/minesweeper-display.component';
+import { ColourkeyComponent } from './solvingpage/minesweeper-display/colourkey/colourkey.component';
 
 
 @NgModule({
@@ -29,7 +34,7 @@ import { ProblemdisplayComponent } from './solvingpage/problemdisplay/problemdis
     ProjectdisplayComponent,
     ProjectinfoComponent,
     ArrowComponent,
-    IntropageComponent,
+    HomepageComponent,
     SlideshowComponent,
     SelectedImageDirective,
     ProjectcardComponent,
@@ -41,7 +46,12 @@ import { ProblemdisplayComponent } from './solvingpage/problemdisplay/problemdis
     DateSuffixPipe,
     SocialbuttonComponent,
     SolvingpageComponent,
-    ProblemdisplayComponent
+    ProblemdisplayComponent,
+    SkyscrapersDisplayComponent,
+    SkyscrapersComponent,
+    MinMaxLimiterDirective,
+    MinesweeperDisplayComponent,
+    ColourkeyComponent
   ],
   imports: [
     BrowserModule,

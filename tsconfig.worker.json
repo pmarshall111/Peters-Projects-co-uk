@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/worker",
+    "lib": [
+      "es2018",
+      "webworker"
+    ],
+    "types": []
+  },
+  "importHelpers": true,
+  "include": [
+    "src/**/*.worker.ts"
+  ],
+  "module": "esnext",
+  "moduleResolution": "node",
+  "target": "es2015"
+}

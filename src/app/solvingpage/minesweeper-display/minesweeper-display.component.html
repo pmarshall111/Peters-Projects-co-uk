@@ -1,0 +1,14 @@
+<div>
+    <div *ngFor="let row of current; let i = index" [ngStyle]="{'grid-template-columns': 'repeat('+(row.length)+', 1fr)'}">
+      <div *ngFor="let square of row; let j = index"
+           [ngStyle]="{'color': getColour(square),
+           'background-image': getBackground(square),
+           'background-color': getBackColour(square, i, j)}"
+      class="square">
+        {{square}}
+      </div>
+    </div>
+</div>
+<button (click)="startSolving()">Solve!</button>
+<p>{{status}}</p>
+<p>Flags: {{flags}}</p>

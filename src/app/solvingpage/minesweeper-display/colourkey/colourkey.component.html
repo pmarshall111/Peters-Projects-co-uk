@@ -1,0 +1,12 @@
+<div>
+  <div class="colour-row title">
+    <h3>Desciption</h3>
+    <h3>Colour</h3>
+  </div>
+  <div *ngFor="let c of colours" class="colour-row">
+    <div>
+      {{c.desc}}
+    </div>
+    <div [style.background-color]="c.colour" class="colour-display"></div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+div {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  grid-gap: 1px;
+  user-select: none;
+}
+
+.square {
+  background-repeat: no-repeat;
+  background-position: center;
+}

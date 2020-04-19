@@ -1,0 +1,40 @@
+<div>
+  <div class="container"
+     [ngStyle]="{'grid-template-columns': 'repeat('+(numCols+2)+', 1fr)', 'grid-template-rows': 'repeat('+(numCols+2)+', 1fr)'}">
+  <input type="number" class="clue"
+         *ngFor="let clue of clues.top; let i = index; trackBy:trackByFn"
+         [ngStyle]="{'grid-area': '1 / '+(i+2)+' / span 1 / span 1'}"
+         [value]="clue"
+         (inputChange)="updateClue($event, clues.top, i)"
+         min="0" [max]="numCols" appMinMaxLimiter/>
+  <input type="number" class="clue"
+         *ngFor="let clue of clues.left; let i = index; trackBy:trackByFn"
+         [ngStyle]="{'grid-area': (i+2)+' / 1 / span 1 / span 1'}"
+         [value]="clue"
+         (inputChange)="updateClue($event, clues.left, i)"
+         min="0" [max]="numCols" appMinMaxLimiter/>
+  <input type="number" class="clue"
+         *ngFor="let clue of clues.right; let i = index; trackBy:trackByFn"
+         [ngStyle]="{'grid-area': (i+2)+' / -2 / span 1 / span 1'}"
+         [value]="clue"
+         (inputChange)="updateClue($event, clues.right, i)"
+         min="0" [max]="numCols" appMinMaxLimiter/>
+  <input type="number" class="clue"
+         *ngFor="let clue of clues.bottom; let i = index; trackBy:trackByFn"
+         [ngStyle]="{'grid-area': '-2 / '+(i+2)+' / span 1 / span 1'}"
+         [value]="clue"
+         (inputChange)="updateClue($event, clues.bottom, i)"
+         min="0" [max]="numCols" appMinMaxLimiter/>
+  <div
+    *ngFor="let row of squares; let i = index"
+    class="square-row"
+    [ngStyle]="{'grid-area': (2+i)+' / 2 / span 1 / span '+numCols,'grid-template-columns': 'repeat('+(numCols)+', 1fr)'}">
+    <input type="number"
+           *ngFor="let square of row" [ngModel]="square"
+           min="0" [max]="numCols" appMinMaxLimiter
+           class="square" (keyup)="square" />
+  </div>
+    <button (click)="calcSkyscrapers()">Calculate!</button>
+    <p *ngIf="lastIterationTime else elseBlock">The time to create a solution was: {{lastIterationTime}}</p>
+    <ng-template #elseBlock>No solution was possible!</ng-template>
+</div>

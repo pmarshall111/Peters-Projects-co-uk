@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+}
+
+.square-row {
+  width: 100%;
+  display: grid;
+}
+
+.square {
+  background: lightblue;
+}
+
+.clue {
+  border: none;
+}
+
+input {
+  width: 100%;
+  /*padding-top: 100%;*/
+  text-align: center;
+  vertical-align: center;
+}

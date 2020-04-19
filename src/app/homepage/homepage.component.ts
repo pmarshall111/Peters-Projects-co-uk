@@ -4,10 +4,10 @@ import {Bubble} from './bubble.model';
 
 @Component({
   selector: 'app-intropage',
-  templateUrl: './intropage.component.html',
-  styleUrls: ['./intropage.component.css']
+  templateUrl: './homepage.component.html',
+  styleUrls: ['./homepage.component.css']
 })
-export class IntropageComponent implements OnInit, AfterViewInit {
+export class HomepageComponent implements OnInit, AfterViewInit {
 
   @ViewChild('bubbleContainer') bubbleContainer: ElementRef;
   projectsBubble: Bubble;
