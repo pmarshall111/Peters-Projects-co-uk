@@ -1,18 +1,20 @@
 <nav id="navbar-example2" class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">PMProjects</a>
+  <a class="navbar-brand" routerLink="/" routerLinkActive="active" >PMProjects</a>
   <ul class="nav nav-pills">
     <li class="nav-item">
-      <a class="nav-link" href="#home">Home</a>
+      <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" routerLink="/projects" routerLinkActive="active">Projects</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/problemsolving" routerLinkActive="active">Problem Solving</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
     </li>
   </ul>
 </nav>
-<main data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-<!--  <app-homepage id="home"></app-homepage>-->
-<!--  <app-projectpage id="projects"></app-projectpage>-->
-  <app-solvingpage></app-solvingpage>
-<!--  <app-contactpage></app-contactpage>-->
+  <router-outlet></router-outlet>
 </main>
 <app-footer></app-footer>

@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
 
+import { FormsModule }   from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ProjectpageComponent } from './projectpage/projectpage.component';
 import { ProjectdisplayComponent } from './projectpage/projectdisplay/projectdisplay.component';
@@ -55,7 +56,8 @@ import { ColourkeyComponent } from './solvingpage/minesweeper-display/colourkey/
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
