@@ -9,8 +9,10 @@ img {
 
 .btn {
   width: 100%;
-  border: none;
+  border-width: 3px;
+  border-style: solid;
   border-radius: 4px;
+  border-color: dimgrey;
   padding: 12px;
   margin: 5px 0;
   opacity: 0.85;
@@ -38,4 +40,9 @@ img {
 .Codewars {
   background-color: black;
   color: white;
+}
+
+.LeetCode {
+  background-color: whitesmoke;
+  color: darkslategrey;
 }

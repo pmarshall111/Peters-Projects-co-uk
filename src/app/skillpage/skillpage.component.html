@@ -1,0 +1,6 @@
+<h3>Key Skills</h3>
+<p>Whilst studying at University I've used many different technologies to acquire a broad range of skills, before looking to specialise through a career.
+This has been great for me to get used to using unfamiliar technologies and realise the type of career I'm looking for.</p>
+<div class="container" [ngStyle]="{'grid-template-columns': 'repeat(' + skills.length + ', 1fr)'}">
+  <app-skillitem *ngFor="let skill of skills" [technology]="skill"></app-skillitem>
+</div>

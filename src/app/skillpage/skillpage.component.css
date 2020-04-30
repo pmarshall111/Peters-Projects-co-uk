@@ -1,0 +1,14 @@
+h3 {
+  text-align: center;
+  margin: 50px;
+  font-size: 40px;
+}
+
+p {
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  padding: 30px;
+}

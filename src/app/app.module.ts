@@ -26,6 +26,8 @@ import { SkyscrapersComponent } from './solvingpage/skyscrapers/skyscrapers.comp
 import { MinMaxLimiterDirective } from './shared/min-max-limiter.directive';
 import { MinesweeperDisplayComponent } from './solvingpage/minesweeper-display/minesweeper-display.component';
 import { ColourkeyComponent } from './solvingpage/minesweeper-display/colourkey/colourkey.component';
+import { SkillitemComponent } from './skillpage/skillitem/skillitem.component';
+import { SkillpageComponent } from './skillpage/skillpage.component';
 
 
 @NgModule({
@@ -52,7 +54,9 @@ import { ColourkeyComponent } from './solvingpage/minesweeper-display/colourkey/
     SkyscrapersComponent,
     MinMaxLimiterDirective,
     MinesweeperDisplayComponent,
-    ColourkeyComponent
+    ColourkeyComponent,
+    SkillitemComponent,
+    SkillpageComponent
   ],
   imports: [
     BrowserModule,
