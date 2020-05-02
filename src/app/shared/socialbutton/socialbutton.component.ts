@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 
 import {links} from "./links"
 
@@ -7,14 +7,26 @@ import {links} from "./links"
   templateUrl: './socialbutton.component.html',
   styleUrls: ['./socialbutton.component.css']
 })
-export class SocialbuttonComponent implements OnInit {
-  @Input() company;
-  link: String;
+export class SocialbuttonComponent implements OnInit, AfterViewInit {
+  @Input() company: String;
+  @Input() link?: String;
+  @Input() text?: String;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.link = links[this.company];
   }
+
+  ngAfterViewInit(): void {
+    if (!this.link) {
+      // @ts-ignore
+      this.link = links[this.company];
+    }
+    if (!this.text) {
+      this.text = this.company;
+    }
+  }
+
+
 
 }

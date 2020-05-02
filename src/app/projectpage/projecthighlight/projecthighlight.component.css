@@ -1,0 +1,28 @@
+.outside {
+  margin: 40px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  background: whitesmoke;
+  border-radius: 20px;
+}
+
+.outside > *:not(h3) {
+  grid-row: 2;
+}
+
+.info, h3 {
+  text-align: center;
+}
+
+.link-display {
+  display: grid;
+  place-items: center;
+}
+
+.social-buttons-cont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+}

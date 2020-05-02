@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ArrowComponent } from './arrow.component';
+import { ProblemhighlightComponent } from './problemhighlight.component';
 
-describe('ArrowComponent', () => {
-  let component: ArrowComponent;
-  let fixture: ComponentFixture<ArrowComponent>;
+describe('MinesweeperhighlightComponent', () => {
+  let component: ProblemhighlightComponent;
+  let fixture: ComponentFixture<ProblemhighlightComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ArrowComponent ]
+      declarations: [ ProblemhighlightComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ArrowComponent);
+    fixture = TestBed.createComponent(ProblemhighlightComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

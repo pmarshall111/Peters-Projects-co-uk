@@ -1,22 +1,21 @@
-import {ProjectInfoModel} from './projectInfo.model';
-import {ProjectimageModel} from './projectimage.model';
+import {ProjectmediaModel} from './projectmedia.model';
 
 export class ProjectModel {
   public title: string;
   public blurb: string;
+  public about: string;
   public githubLink: string;
-  public imgList: ProjectimageModel[];
-  public info: ProjectInfoModel[];
-  public builtWith: string[]
+  public media: ProjectmediaModel[];
+  public builtWith: string;
   public show;
 
 
-  constructor(title: string, blurb: string, githubLink: string, imgList: ProjectimageModel[], info: ProjectInfoModel[], builtWith: string[], show) {
+  constructor(title: string, blurb: string, about: string, githubLink: string, media: ProjectmediaModel[], builtWith: string, show) {
     this.title = title;
     this.blurb = blurb;
+    this.about = about;
     this.githubLink = githubLink;
-    this.imgList = imgList;
-    this.info = info;
+    this.media = media;
     this.builtWith = builtWith;
     this.show = show;
   }

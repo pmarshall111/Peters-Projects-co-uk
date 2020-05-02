@@ -1,0 +1,18 @@
+.title-container {
+  text-align: center;
+}
+
+.links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  align-items: center;
+}
+
+.links > *:first-child {
+  justify-self: end;
+}
+
+.links > *:last-child {
+  justify-self: start;
+}

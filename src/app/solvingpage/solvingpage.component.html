@@ -1,57 +1,21 @@
-<main>
-  <div class="jumbotron title">
-    <div>
-      <h1 class="display-3">Problem Solving</h1>
-      <div>
-        <app-socialbutton company="Codewars"></app-socialbutton>
-        <app-socialbutton company="LeetCode"></app-socialbutton>
-        <p>
-          On the website Codewars.com, I've solved over 250 programming problems, mainly in Java and JavaScript, but have also solved some in Python, TypeScript, SQL and Bash. ranked in the top 1% of users on the site. These problems range from easy challenges
-          to learn how a language works to really quite involved challenges that can take hours or even days to complete. Below are some highlights, with the rest available
-          on my Codewars account.
-        </p>
-      </div>
+<section>
+  <div class="title-container">
+    <h1 class="display-3">Problem Solving</h1>
+    <div class="links">
+      <app-socialbutton company="Codewars"></app-socialbutton>
+      <app-socialbutton company="LeetCode"></app-socialbutton>
     </div>
+    <p>
+      Codewars and LeetCode are both websites that test your ability to solve programming problems and compare them to others solutions.
+      Combined over the 2 sites I've solved over 250 programming problems and on Codewars I'm ranked in the top 1% of users, solving problems
+      in Java, JavaScript and Python.
+      Included below are some
+      example solutions that are ranked in the hardest category of problems on Codewars, along with a small description of how they work.
+    </p>
   </div>
 
-
-<!--  <app-skyscrapers></app-skyscrapers>-->
-
-  <app-minesweeper-display></app-minesweeper-display>
-  <app-colourkey></app-colourkey>
-
-<!--&lt;!&ndash;Can have a carousel with a problem display component inside.&ndash;&gt;-->
-<!--  <div class="carousel-container">-->
-<!--    <div id="carousel" class="carousel slide" data-interval="false">-->
-<!--      <ol class="carousel-indicators">-->
-<!--        <li-->
-<!--          *ngFor="let _ of problems; let i = index"-->
-<!--          data-target="#carousel"-->
-<!--          attr.data-slide-to="{{i}}"-->
-<!--          [ngClass]="i == 0 ? 'active' : ''">-->
-<!--        </li>-->
-<!--      </ol>-->
-<!--      <div class="carousel-inner">-->
-<!--        <div class="carousel-item"-->
-<!--             *ngFor="let prob of problems; let i = index"-->
-<!--             [ngClass]="i == 0 ? 'active' : ''">-->
-<!--          <app-problemdisplay problem="prob"></app-problemdisplay>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">-->
-<!--        <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
-<!--        <span class="sr-only">Previous</span>-->
-<!--      </a>-->
-<!--      <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">-->
-<!--        <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
-<!--        <span class="sr-only">Next</span>-->
-<!--      </a>-->
-<!--    </div>-->
-
-<!--  </div>-->
-
-
-  <section>
-
-  </section>
-</main>
+  <app-problemhighlight>
+    <app-skyscrapers *ngIf="problem.title.toLowerCase().includes('skyscrapers')"></app-skyscrapers>
+    <app-minesweeper-display *ngIf="problem.title.toLowerCase().includes('minesweeper')"></app-minesweeper-display>
+  </app-problemhighlight>
+</section>

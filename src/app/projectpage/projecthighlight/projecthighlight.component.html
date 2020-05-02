@@ -1,0 +1,13 @@
+<div class="outside">
+  <h3>{{project.title}}</h3>
+  <div class="content">
+    <div class="info">
+      <h5>About</h5>
+      <p>{{project.about}}</p>
+      <h5>Built With</h5>
+      <p style="white-space: pre-wrap">{{project.builtWith}}</p>
+        <app-socialbutton company="GitHub" text="GitHub link" link="{{project.githubLink}}" [ngStyle]="{'display': 'grid', 'place-items': 'center'}"></app-socialbutton>
+    </div>
+  </div>
+  <app-carousel [toDisplay]="project.media"></app-carousel>
+</div>
