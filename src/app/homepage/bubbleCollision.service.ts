@@ -12,7 +12,7 @@ export class BubbleCollisionService {
   minSpeed: number;
   maxSpin: number;
   private intervalLength = 100;
-  private dimensionBuffer = 10;
+  private dimensionBuffer = 5;
 
 
   init(bubbles: Bubble[], elemWidth: number, elemHeight: number, maxSpeed: number, minSpeed: number, maxSpin: number) {
@@ -25,22 +25,11 @@ export class BubbleCollisionService {
   }
 
   startControl() {
-
-    let iteration = 0;
     setInterval(() => {
-
       for (let i = 0; i<this.bubbles.length; i++) {
-
-
-
         let currentBubble = this.bubbles[i];
-
-
-
-
         this.moveBubble(currentBubble);
-
-//first just add collisions with sides
+      //first just add collisions with sides
         //look up
         if (currentBubble.y < this.dimensionBuffer && currentBubble.speedY<0){
           currentBubble.speedY *= -1;
@@ -58,13 +47,10 @@ export class BubbleCollisionService {
           currentBubble.speedX *= -1;
         }
 
-
-        //TODO: right now collision happens based on square box surrounding circle...
-        //now looking for collisions with other bubbles. optimisations done here by looking at interaction only once
+        //now looking for collisions with other bubbles.
         //works by changing the axes such that the problem becomes 1 dimensional.
         for (let j = i+1; j<this.bubbles.length; j++) {
           let otherBubble = this.bubbles[j];
-
           //first, will collision take place?
           let nextMoveCurrent = {
             cX: currentBubble.getCenterX() + currentBubble.speedX,
@@ -75,7 +61,6 @@ export class BubbleCollisionService {
             cY: otherBubble.getCenterY() + otherBubble.speedY
           }
 
-
           let xDiff = Math.abs(nextMoveCurrent.cX - nextMoveOther.cX),
             yDiff = Math.abs(nextMoveCurrent.cY - nextMoveOther.cY);
 
@@ -83,14 +68,6 @@ export class BubbleCollisionService {
           let diffIfTouching = currentBubble.getRadius() + otherBubble.getRadius();
 
           if (diffBetweenCenters <= diffIfTouching) {
-            console.log(currentBubble.label + " vs " + otherBubble.label)
-
-            if (iteration == 0) {
-              console.log({cCenterX: currentBubble.getCenterX(), cCenterY: currentBubble.getCenterY(),
-                oCenterX: otherBubble.getCenterX(), oCenterY: otherBubble.getCenterY(), cSpeedX: currentBubble.speedX, cSpeedY: currentBubble.speedY,
-                oSpeedX: otherBubble.speedX, oSpeedY: otherBubble.speedY})
-            }
-
             //we have collision
             //must consider angle of hitting and also momentum change based on how big the bubbles are.
 
@@ -105,20 +82,8 @@ export class BubbleCollisionService {
             //theta given already in radians
             let theta = Math.atan(gradient);
 
-            //y stays 100% the same
-            // let newYComponent = currentBubble.speedX*Math.sin(theta) + currentBubble.speedY*Math.sin(90-theta);
-            // let newXComponent = currentBubble.speedX*Math.cos(theta) + currentBubble.speedY*Math.cos(90-theta);
-            //
-            // let otherNewYComponent = otherBubble.speedX*Math.sin(theta) + otherBubble.speedY*Math.sin(90-theta);
-            // let otherNewXComponent = otherBubble.speedX*Math.cos(theta) + otherBubble.speedY*Math.cos(90-theta);
-
             let currBSpeed = this.convertToNewAxis(currentBubble.speedX, -currentBubble.speedY, theta);
             let otherBSpeed = this.convertToNewAxis(otherBubble.speedX, -otherBubble.speedY, theta);
-
-            if (iteration ==0) {
-
-              console.log({currB: currBSpeed, otherB: otherBSpeed, currBX: currBSpeed.newX, otherBY: otherBSpeed.newX});
-            }
 
             let m1 = currentBubble.getArea(), m2 = otherBubble.getArea();
             //
@@ -146,29 +111,15 @@ export class BubbleCollisionService {
 
             otherBubble.speedX = otherAfterCollision.newX;
             otherBubble.speedY = -otherAfterCollision.newY;
-
-            if (iteration == 0) {
-              console.log({gradient, theta, finalNewXComponent, otherFinalNewXComponent, reverseTheta, currAfterCollision, otherAfterCollision})
-            }
-            iteration++;
-
           }
-
-
-
-
         }
-
       }
-
       // console.log({w: this.containerWidth});
     }, 10)
   }
 
   //angle between x axes can be anything from -pi/2 to p1/2
   convertToNewAxis(x: number, y: number, angleBetweenXAxes: number): {newY: number, newX: number} {
-    // let angleRadians = angleBetweenXAxes*Math.PI/180;
-
     let newX = x*Math.cos(angleBetweenXAxes) + y*Math.sin(angleBetweenXAxes);
     let newY = -x*Math.sin(angleBetweenXAxes) + y*Math.cos(angleBetweenXAxes);
 
@@ -181,9 +132,6 @@ export class BubbleCollisionService {
 
 
   private moveBubble(bubble: Bubble) {
-    // bubble.x = this.getNewPosInLimits(bubble.x, bubble.speedX, 0, this.containerWidth);
-    // bubble.y = this.getNewPosInLimits(bubble.y, bubble.speedY, 0, this.containerHeight);
-
     bubble.x += bubble.speedX;
     bubble.y += bubble.speedY;
   }

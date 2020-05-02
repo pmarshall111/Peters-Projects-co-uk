@@ -25,13 +25,11 @@
             ],
             "styles": [
               "src/styles.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./node_modules/highlight.js/styles/github.css"
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.slim.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.bundle.js",
-              "./node_modules/highlight.js/lib/highlight.js"
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.js"
             ],
             "webWorkerTsConfig": "tsconfig.worker.json"
           },

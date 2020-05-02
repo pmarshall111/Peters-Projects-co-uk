@@ -5,5 +5,5 @@
     <div class="bottom" [ngStyle]="bottomStyle"></div>
   </div>
   <h5>{{technology.name}}</h5>
-  <p *ngFor="let library of technology.libraries" class="badge badge-pill badge-light">{{library.name}}</p>
+  <p *ngFor="let library of technology.libraries" class="badge badge-pill badge-light" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">{{library.name}}</p>
 </div>

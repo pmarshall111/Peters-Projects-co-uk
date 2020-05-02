@@ -24,6 +24,9 @@ import { SkillpageComponent } from './skillpage/skillpage.component';
 import { CarouselComponent } from './shared/carousel/carousel.component';
 import { ProjecthighlightComponent } from './projectpage/projecthighlight/projecthighlight.component';
 import { ProblemhighlightComponent } from './solvingpage/problemhighlight/problemhighlight.component';
+import { TitleComponent } from './shared/title/title.component';
+import { NavComponent } from './nav/nav.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -48,12 +51,14 @@ import { ProblemhighlightComponent } from './solvingpage/problemhighlight/proble
     SkillpageComponent,
     CarouselComponent,
     ProjecthighlightComponent,
-    ProblemhighlightComponent
+    ProblemhighlightComponent,
+    TitleComponent,
+    NavComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    AppRoutingModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

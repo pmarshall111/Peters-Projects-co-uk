@@ -1,10 +1,9 @@
 .project-page {
   padding: 0px 50px;
+  display: grid;
+  place-items: center;
 }
 
-.title {
-  text-align: center;
-}
 
 .img-container {
   overflow: hidden;
@@ -19,7 +18,8 @@ img {
 }
 
 .card-container {
-  width: 100%;
+  width: 75%;
+  min-width: 400px;
   height: 100%;
   padding: 30px;
   display: grid;

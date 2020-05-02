@@ -1,25 +1,9 @@
-<nav id="navbar-example2" class="navbar navbar-light bg-light">
-  <a class="navbar-brand" routerLink="/">PMProjects</a>
-  <ul class="nav nav-pills">
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/projects" routerLinkActive="active">Projects</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/problemsolving" routerLinkActive="active">Problem Solving</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
-    </li>
-  </ul>
-</nav>
+<app-nav></app-nav>
 <main>
-<!--  <router-outlet></router-outlet>-->
-<!--  <app-skillitem technology="Operating System"></app-skillitem>-->
-<!--  <app-skillpage></app-skillpage>-->
-<app-solvingpage></app-solvingpage>
-<!--  <app-projectpage></app-projectpage>-->
+  <app-homepage id="home"></app-homepage>
+  <app-skillpage id="skills"></app-skillpage>
+  <app-projectpage id="projects"></app-projectpage>
+  <app-solvingpage id="solving"></app-solvingpage>
+  <app-contactpage id="contact"></app-contactpage>
 </main>
 <app-footer></app-footer>

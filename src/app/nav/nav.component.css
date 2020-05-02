@@ -1,0 +1,27 @@
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+/*nav spies on the body. attributes set in app.ts*/
+
+li, .navbar-brand {
+  cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  ul {
+    flex-direction: row !important;
+  }
+}
+
+ul {
+  flex-direction: column;
+  text-align: center;
+}
+
+#sectionLinks {
+  justify-content: flex-end;
+}

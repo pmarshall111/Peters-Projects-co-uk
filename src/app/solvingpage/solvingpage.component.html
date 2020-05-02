@@ -1,19 +1,14 @@
 <section>
-  <div class="title-container">
-    <h1 class="display-3">Problem Solving</h1>
+  <app-title title="Problem Solving" blurb="Codewars and LeetCode are both websites that test your ability to solve programming problems and compare them to others solutions.
+      Combined over the 2 sites I've solved over 250 programming problems and on Codewars I'm ranked in the top 1% of users, solving problems
+      in Java, JavaScript and Python.
+      Included below are some
+      example solutions that are ranked in the hardest category of problems on Codewars, along with a small description of how they work.">
     <div class="links">
       <app-socialbutton company="Codewars"></app-socialbutton>
       <app-socialbutton company="LeetCode"></app-socialbutton>
     </div>
-    <p>
-      Codewars and LeetCode are both websites that test your ability to solve programming problems and compare them to others solutions.
-      Combined over the 2 sites I've solved over 250 programming problems and on Codewars I'm ranked in the top 1% of users, solving problems
-      in Java, JavaScript and Python.
-      Included below are some
-      example solutions that are ranked in the hardest category of problems on Codewars, along with a small description of how they work.
-    </p>
-  </div>
-
+  </app-title>
   <app-problemhighlight>
     <app-skyscrapers *ngIf="problem.title.toLowerCase().includes('skyscrapers')"></app-skyscrapers>
     <app-minesweeper-display *ngIf="problem.title.toLowerCase().includes('minesweeper')"></app-minesweeper-display>

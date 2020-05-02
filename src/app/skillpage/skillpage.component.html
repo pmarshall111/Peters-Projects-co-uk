@@ -1,7 +1,8 @@
-<h3>Key Skills</h3>
-<p>Whilst studying at University I've used many different technologies (both at uni and in my spare time) to acquire a broad range of skills,
-  before looking to specialise through a career. The aim was to create a strong and broad knowledge base before going on to master a select few technologies.
-  The process has allowed me to get used to using unfamiliar libraries and get better and more confident at picking up new technologies.</p>
-<div class="container" [ngStyle]="{'grid-template-columns': 'repeat(' + skills.length + ', 1fr)'}">
-  <app-skillitem *ngFor="let skill of skills" [technology]="skill"></app-skillitem>
+<div>
+  <app-title title="Key Skills" blurb="Whilst studying at University I've used many different technologies (both at uni and in my spare time) to
+  acquire a broad range of skills, before looking to learn more and specialise through a career.
+  The aim was to create a strong and broad knowledge base to help understand which technologies I prefer and want to go on to master."></app-title>
+  <div class="container" [ngStyle]="{'grid-template-columns': 'repeat(' + skills.length + ', 1fr)'}">
+    <app-skillitem *ngFor="let skill of skills" [technology]="skill"></app-skillitem>
+  </div>
 </div>
