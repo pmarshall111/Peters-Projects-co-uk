@@ -1,21 +1,23 @@
 <div class="outside">
-  <h3>{{problem.title}}</h3>
-  <div></div> <!--Just to fill in an empty grid space-->
-  <ng-content></ng-content>
-  <div class="content">
-    <div class="info">
-      <h5>About</h5>
-      <p>{{problem.description}}</p>
-      <h5>How it works</h5>
-      <p>{{problem.approach}}</p>
-      <div class="social-buttons-cont">
-        <app-socialbutton company="Codewars" text="Codewars problem" link="{{problem.problemLink}}" [ngStyle]="{'display': 'grid', 'place-items': 'center'}"></app-socialbutton>
-        <app-socialbutton company="GitHub" text="GitHub link" link="{{problem.codeLink}}" [ngStyle]="{'display': 'grid', 'place-items': 'center'}"></app-socialbutton>
-      </div>
-    </div>
-  </div>
   <div class="arrow arrow-prev" (click)="prevProblem()">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </div>
+  <div class="content-container">
+    <h3>{{problem.title}}</h3>
+    <div></div> <!--Just to fill in an empty grid space-->
+    <ng-content></ng-content>
+    <div class="content">
+      <div class="info">
+        <h5>About</h5>
+        <p>{{problem.description}}</p>
+        <h5>How it works</h5>
+        <p>{{problem.approach}}</p>
+        <div class="social-buttons-cont">
+          <app-socialbutton company="Codewars" text="Codewars problem" link="{{problem.problemLink}}" [ngStyle]="{'display': 'grid', 'place-items': 'center'}"></app-socialbutton>
+          <app-socialbutton company="GitHub" text="GitHub link" link="{{problem.codeLink}}" [ngStyle]="{'display': 'grid', 'place-items': 'center'}"></app-socialbutton>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="arrow arrow-next" (click)="nextProblem()">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>

@@ -4,8 +4,8 @@
         available to view on GitHub, with a link included with each project."></app-title>
     <div class="card-container">
       <div class="project-card"
-           *ngFor="let p of projects"
-      (click)="onChangeProject(p)">
+           *ngFor="let p of projects; let i = index;"
+      (click)="onChangeProject(i)">
           <div class="img-container">
             <img src="{{p.media[0].link}}">
           </div>

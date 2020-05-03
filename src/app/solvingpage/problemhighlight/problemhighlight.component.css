@@ -1,12 +1,15 @@
 .outside {
   margin: 40px;
-  padding: 40px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+}
+
+.content-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
   background: whitesmoke;
-  border-radius: 20px;
-  position: relative;
+  padding: 40px;
 }
 
 .content {
@@ -31,22 +34,11 @@
 }
 
 .arrow {
-  position: absolute;
   cursor: pointer;
   height: 50%;
   width: 10%;
   min-width: 40px;
-  border: 2px solid black;
-  top: 50%;
-  transform: translate(0%,-50%);
   display: grid;
   place-items: center;
-}
-
-.arrow-prev {
-  left: 0px;
-}
-
-.arrow-next {
-  right: 0px;
+  align-self: center;
 }
