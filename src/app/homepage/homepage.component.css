@@ -4,7 +4,11 @@
 
 h1, h2, h3 {
   text-align: center;
-  z-index: 5;
+}
+
+.info-container {
+  position: absolute;
+  z-index: 15;
 }
 
 .cover {
@@ -20,7 +24,8 @@ h1, h2, h3 {
   top: 0px;
   left: 0px;
   border-radius: 99999em;
-  background-color: red;
+  background: rgb(230,238,174);
+  background: radial-gradient(circle at 50% 120%, rgba(230,238,174,1) 0%, rgba(148,187,233,1) 100%);
   border: 3px solid black;
   display: grid;
   place-items: center;

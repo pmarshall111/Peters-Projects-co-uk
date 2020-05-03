@@ -6,7 +6,6 @@ import { FormsModule }   from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ProjectpageComponent } from './projectpage/projectpage.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { ProjectcardComponent } from './projectpage/projectcard/projectcard.component';
 import { ContactpageComponent } from './contactpage/contactpage.component';
 import { ContactformComponent } from './contactpage/contactform/contactform.component';
 import { CorrectEmail } from './contactpage/contactform/correct-email.directive';
@@ -34,7 +33,6 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppComponent,
     ProjectpageComponent,
     HomepageComponent,
-    ProjectcardComponent,
     ContactpageComponent,
     ContactformComponent,
     CorrectEmail,

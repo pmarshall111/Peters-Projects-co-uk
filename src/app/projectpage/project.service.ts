@@ -1,5 +1,5 @@
 import {ProjectModel} from './project.model';
-import {BehaviorSubject, Subject} from 'rxjs';
+import {BehaviorSubject} from 'rxjs';
 import { Injectable } from '@angular/core';
 import {projects} from './projects.collection';
 

@@ -33,7 +33,9 @@ export const projects: ProjectModel[] = [
   new ProjectModel(
     'Football betting',
     'CLI application',
-    "Stuff",
+    "This app is designed to predict the probabilities of results of football matches. If the app calculates the probability of a result that is" +
+    " far higher than the probabilities offered by betting companies, an email is sent to me and I can decide whether to place a bet or not. Currently" +
+    " this project is not working.",
     'www.github.com/pmarshall111',
     // tslint:disable-next-line:max-line-length
     [new ProjectmediaModel(
@@ -46,9 +48,11 @@ export const projects: ProjectModel[] = [
     "Database: Sqlite3",
     true),
   new ProjectModel(
-    'Peter Marshall Projects',
+    'Peter\'s Projects',
     'Website',
-    "Stuff",
+    "This website was made to showcase previous projects and problems I've tackled. However, I also wanted the website to be a piece to show off" +
+    " in itself, so bouncing balls are included on the landing page. The website was designed to be responsive such that it resizes it's content" +
+    " based on the screen size of the device it is being viewed on.",
     'www.github.com/pmarshall111',
     // tslint:disable-next-line:max-line-length
     [new ProjectmediaModel('data:image/jpeg;base64,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',

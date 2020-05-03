@@ -5,7 +5,8 @@
     <div class="card-container">
       <div class="project-card"
            *ngFor="let p of projects; let i = index;"
-      (click)="onChangeProject(i)">
+      (click)="onChangeProject(i)"
+      [ngClass]="selectedProject == p ? 'selected' : ''">
           <div class="img-container">
             <img src="{{p.media[0].link}}">
           </div>

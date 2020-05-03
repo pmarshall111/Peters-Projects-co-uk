@@ -23,7 +23,7 @@ img {
   height: 100%;
   padding: 30px;
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 40px;
   grid-template-columns: 100%;
   align-content: center;
   justify-content: center;
@@ -44,6 +44,21 @@ img {
   grid-template-rows: 100px;
   align-items: center;
   width: 100%;
+  position: relative;
+}
+
+.project-card.selected::before, .project-card.selected::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: calc(100% + 6px);
+  background: goldenrod;
+}
+.project-card.selected::before {
+  left: -16px;
+}
+.project-card.selected::after {
+  right: -16px;
 }
 
 .project-card .info {
