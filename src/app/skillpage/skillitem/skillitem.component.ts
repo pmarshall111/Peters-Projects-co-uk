@@ -1,4 +1,15 @@
-import {AfterContentInit, AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, ViewChild} from '@angular/core';
+import {
+  AfterContentInit,
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostListener,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+  ViewChild
+} from '@angular/core';
 import {SkillModel} from '../skill.model';
 
 @Component({
@@ -6,39 +17,38 @@ import {SkillModel} from '../skill.model';
   templateUrl: './skillitem.component.html',
   styleUrls: ['./skillitem.component.css']
 })
-export class SkillitemComponent implements OnInit, AfterViewInit {
+export class SkillitemComponent implements OnInit, OnChanges {
   @Input() technology: SkillModel;
+  @Input() containerWidth: number;
   @ViewChild("hex") hex: ElementRef<HTMLDivElement>;
   borderColour: string;
-  width: number;
   borderWidth: number;
   topStyle;
   bottomStyle;
   middleStyle;
+  paddingPerc;
 
   constructor() { }
 
   ngOnInit(): void {
     this.borderColour = "#333";
+    this.paddingPerc = 10;
   }
 
-  ngAfterViewInit(): void {
-    this.setWidth();
-  }
-
-  @HostListener("window:resize")
-  onResize() {
-    this.setWidth();
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
+    if (changes.containerWidth) {
+      this.containerWidth *= ((100-this.paddingPerc)/100);
+      this.setWidth();
+    }
   }
 
   private setWidth() {
-    this.width = this.hex.nativeElement.getBoundingClientRect().width;
-    this.borderWidth = this.width*0.05;
+    this.borderWidth = this.containerWidth*0.05;
     this.topStyle = this.getTopStyle();
     this.middleStyle = this.getMiddleStyle();
     this.bottomStyle = this.getBottomStyle();
-    console.log(this.topStyle)
-    console.log(this.width)
+    console.log(this.containerWidth);
   }
 
   getTopStyle() {
@@ -63,25 +73,26 @@ export class SkillitemComponent implements OnInit, AfterViewInit {
     return {'height': this.getHeight() + 'px',
     'border-left': 'solid ' + this.borderWidth + 'px ' + this.borderColour,
       'border-right': 'solid ' + this.borderWidth + 'px ' + this.borderColour,
-      'margin': this.getHeight()/2 + 'px 0'
+      'margin': this.getHeight()/2 + 'px 0',
+      'width': this.containerWidth+'px'
     }
   }
 
   getHeight(){
     //calc'd from drawing hexagon and working out for equal sides.
-    return (this.width/2)/Math.cos(30*Math.PI/180);
+    return (this.containerWidth/2)/Math.cos(30*Math.PI/180);
   }
 
   getBeforeAfterTopBottomOffset() {
-    return (this.width/Math.sqrt(2))/2;
+    return (this.containerWidth/Math.sqrt(2))/2;
   }
 
   getBeforeAfterWidthHeight(){
-    return this.width/Math.sqrt(2);
+    return this.containerWidth/Math.sqrt(2);
   }
 
   getBeforeAfterLeft() {
-    return (this.width-(this.width/Math.sqrt(2)))/2 - this.borderWidth;
+    return (this.containerWidth-(this.containerWidth/Math.sqrt(2)))/2 - this.borderWidth;
   }
 
   getBeforeAfterBorderWidth() {

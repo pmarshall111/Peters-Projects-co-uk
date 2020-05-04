@@ -10,5 +10,6 @@ p {
 
 .container {
   display: grid;
-  padding: 30px;
+  padding: 0px;
+  max-width: 1000px;
 }
