@@ -62,7 +62,7 @@
 
 @media (min-width: 1400px) {
   .content-container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
     grid-gap: 20px;
   }
 
@@ -79,4 +79,18 @@
   h3 {
     margin-bottom: 40px;
   }
+}
+
+.social-buttons-cont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.social-buttons-cont:first-child {
+  justify-self: end;
+}
+
+.social-buttons-cont:last-child {
+  justify-self: start;
 }

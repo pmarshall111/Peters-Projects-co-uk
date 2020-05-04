@@ -10,7 +10,7 @@
     </div>
   </app-title>
   <app-problemhighlight>
-    <app-skyscrapers *ngIf="problem.title.toLowerCase().includes('skyscrapers')"></app-skyscrapers>
+    <app-skyscrapersDisplay *ngIf="problem.title.toLowerCase().includes('skyscrapers')"></app-skyscrapersDisplay>
     <app-minesweeper-display *ngIf="problem.title.toLowerCase().includes('minesweeper')"></app-minesweeper-display>
   </app-problemhighlight>
 </section>

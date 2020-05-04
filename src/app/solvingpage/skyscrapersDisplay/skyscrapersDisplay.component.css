@@ -1,5 +1,16 @@
 .container {
   display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+.skyscrapers-container {
+  display: grid;
+}
+
+.skyscrapers-container input {
+  height: 50px;
+  border: 1px solid black;
 }
 
 .square-row {
@@ -17,7 +28,37 @@
 
 input {
   width: 100%;
-  /*padding-top: 100%;*/
   text-align: center;
   vertical-align: center;
+}
+
+.user-input {
+  font-weight: bold;
+}
+
+.controls {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+@media (max-width: 1400px) {
+  .controls {
+    margin-top: 20px;
+  }
+}
+
+.controls p {
+  grid-column: 1 / span 2;
+  margin: 0;
+}
+
+.controls label, .controls button:first-of-type {
+  margin: 0;
+  justify-self: end;
+}
+
+.controls input, .controls button:last-of-type {
+  justify-self: start;
 }
