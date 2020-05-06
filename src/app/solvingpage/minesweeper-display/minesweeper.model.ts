@@ -1,5 +1,5 @@
 export class MinesweeperModel {
-  start: string[][];
+  private start: string[][];
   solution: string[][];
   bombs: number;
 
@@ -7,5 +7,13 @@ export class MinesweeperModel {
     this.start = start;
     this.solution = solution;
     this.bombs = bombs;
+  }
+
+  getCopyOfStart(): string[][] {
+    let newArr = [];
+    this.start.forEach(row => {
+      newArr.push(row.slice());
+    });
+    return newArr;
   }
 }

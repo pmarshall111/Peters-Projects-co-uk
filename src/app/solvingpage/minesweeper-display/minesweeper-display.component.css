@@ -1,3 +1,7 @@
+.sweeper-game-container {
+  border: 1px solid black;
+}
+
 div {
   display: grid;
   place-items: center;
@@ -9,4 +13,58 @@ div {
 .square {
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.controls {
+  padding: 20px 25%;
+  grid-template-columns: 33% 33% 33%;
+  place-items: center;
+  grid-gap: 10px;
+}
+
+.controls button:last-of-type {
+  grid-column: 2;
+}
+
+.speed-control {
+  grid-row: 3;
+  grid-column: 1 / span 3;
+  text-align: center;
+  grid-template-columns: auto auto;
+}
+
+.speed-control label {
+  margin: 0;
+}
+
+.speed-control span {
+  place-self: center;
+  grid-column: 2;
+}
+
+.status {
+  height: 125px;
+}
+
+@media (min-width: 750px) {
+  .status {
+    height: 100px;
+  }
+}
+
+@media (min-width: 900px) {
+  .status {
+    height: 75px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .status {
+    height: 50px;
+  }
+}
+
+p {
+  text-align: center;
+  vertical-align: center;
 }

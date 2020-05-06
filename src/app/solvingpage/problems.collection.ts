@@ -15,7 +15,9 @@ export const problems: ProblemModel[] = [
     "https://www.codewars.com/kata/7x7-skyscrapers",
     "https://github.com/pmarshall111/Skyscrapers7x7"),
 
-  new ProblemModel("Minesweeper", "The problem was to create a program to solve a game of minesweeper.",
+  new ProblemModel("Minesweeper", "The problem was to create a program to solve a game of minesweeper. After passing all the tests on Codewars" +
+    " I decided to turn it into a recursive solution to reduce the number of times the program had to loop through the whole array. I also changed" +
+    " the code such that the solver could display visually how the recursive solution works and can be stepped forwards or backwards.",
     "The approach is shown visually through the solver." +
     " The grid is looped through line by line until it finds a number. Looking at the squares around the number the program decides whether" +
     " to open the square or to place a flag using simple logic. Most minesweeper puzzles cannot be solved just using this method however, often it is" +

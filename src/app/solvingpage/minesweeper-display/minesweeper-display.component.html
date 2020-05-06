@@ -1,4 +1,4 @@
-<div>
+<div class="sweeper-game-container">
     <div *ngFor="let row of current; let i = index" [ngStyle]="{'grid-template-columns': 'repeat('+(row.length)+', 1fr)'}">
       <div *ngFor="let square of row; let j = index"
            [ngStyle]="{'color': getColour(square),
@@ -9,6 +9,22 @@
       </div>
     </div>
 </div>
-<button (click)="startSolving()">Solve!</button>
-<p>{{status}}</p>
-<p>Flags: {{flags}}</p>
+<div class="controls">
+  <button (click)="prev()">
+    Prev
+  </button>
+  <button (click)="this.timeout ? pause() : play()">
+    {{this.timeout ? "Pause" : "Play"}}
+  </button>
+  <button (click)="next()">
+    Next
+  </button>
+  <button (click)="resetBoard()">Reset</button>
+  <div class="speed-control">
+    <label for="playSpeed">Iteration Delay: </label>
+    <input type="range" id="playSpeed" min="50" max="1000" [value]="solvingInterval" (change)="changeSolvingInterval($event)"/>
+    <span>{{solvingInterval}}ms</span>
+  </div>
+</div>
+<p>Flags Left: {{flags}}</p>
+<p class="status">Status: {{status}}</p>
