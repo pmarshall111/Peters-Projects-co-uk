@@ -1,3 +1,7 @@
+.carousel {
+  border: 2px solid #444;
+}
+
 .carousel, .carousel-inner, .carousel-inner img {
   height: 100%
 }

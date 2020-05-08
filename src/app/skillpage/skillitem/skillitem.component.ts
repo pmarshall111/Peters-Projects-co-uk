@@ -36,7 +36,6 @@ export class SkillitemComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
     if (changes.containerWidth) {
       this.containerWidth *= ((100-this.paddingPerc)/100);
       this.setWidth();
@@ -48,7 +47,6 @@ export class SkillitemComponent implements OnInit, OnChanges {
     this.topStyle = this.getTopStyle();
     this.middleStyle = this.getMiddleStyle();
     this.bottomStyle = this.getBottomStyle();
-    console.log(this.containerWidth);
   }
 
   getTopStyle() {

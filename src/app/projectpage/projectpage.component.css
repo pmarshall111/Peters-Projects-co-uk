@@ -69,9 +69,10 @@ img {
   margin: 0;
 }
 
-.img-container {
+.project-card .img-container {
   position: relative;
   background-position: center;
   background-size: cover;
   height: 100%;
+  border-right: 3px solid lightgrey;
 }

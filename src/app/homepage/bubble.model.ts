@@ -20,7 +20,7 @@ export class Bubble {
     this.speedY = speedY;
   }
 
-  getClass() {
+  getId() {
     return this.label.split(" ").join("").toLowerCase()+"_bubble";
   }
 

@@ -17,7 +17,6 @@ export class SkyscrapersDisplayComponent implements OnInit {
 
   ngOnInit(): void {
     this.gridSize=5;
-    console.log(this.gridSize)
     // this.clues = new Array(this.gridSize).fill(0);
     this.clues = {
       top: new Array(this.gridSize).fill(0),

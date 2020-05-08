@@ -11,7 +11,7 @@
     <div class="carousel-item"
          *ngFor="let media of toDisplay; let i = index"
          [ngClass]="i == 0 ? 'active' : ''">
-      <div class="img-container">
+      <div class="img-container" (click)="showBigImg(media)">
         <img *ngIf="media.isImage; else showVideo" src="{{media.link}}">
       </div>
       <ng-template #showVideo>
@@ -33,4 +33,5 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+  <app-full-size-img *ngIf="imgToMakeBig" [img]="imgToMakeBig" (onClose)="closeBigImg()"></app-full-size-img>
 </div>

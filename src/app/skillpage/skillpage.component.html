@@ -1,7 +1,8 @@
 <div>
-  <app-title title="Key Skills" blurb="I've used many different technologies, across multiple languages and frameworks to acquire a broad range of skills.
-  The aim was to create a strong and wide knowledge base so I could have a better idea of what career path I prefer and also was quite an
-   enjoyable process for me. I'm looking to further specialise in some of these technologies and learn more as I progress in my career."></app-title>
+  <app-title title="Key Skills" blurb="I've used many different technologies across multiple languages and frameworks, acquiring a broad range of skills.
+  The aim was to create a strong and wide knowledge base so I could have a better idea of what career path I'd like to take and also become more
+  confident with using unfamiliar technologies. Overall, learning these skills has been quite enjoyable for me and I'm looking to further
+   specialise and learn more as I progress in my career."></app-title>
   <div class="container" #skillsContainer [ngStyle]="{'grid-template-columns': ((100/skills.length)+'% ').repeat(skills.length)}">
     <app-skillitem *ngFor="let skill of skills" [technology]="skill" [containerWidth]="eachContainerWidth"></app-skillitem>
   </div>

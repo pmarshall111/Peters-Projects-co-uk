@@ -13,6 +13,7 @@ export class CarouselComponent implements OnInit, AfterViewInit {
   @ViewChild("carousel") carousel: ElementRef<HTMLDivElement>;
   elemHeight: number;
   elemWidth: number;
+  imgToMakeBig: ProjectmediaModel;
 
   constructor(private sanitiser: DomSanitizer) { }
 
@@ -41,6 +42,12 @@ export class CarouselComponent implements OnInit, AfterViewInit {
     this.elemHeight = height;
   }
 
+  showBigImg(img: ProjectmediaModel) {
+    this.imgToMakeBig = img;
+  }
 
+  closeBigImg() {
+    this.imgToMakeBig = null;
+  }
 
 }

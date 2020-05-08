@@ -25,6 +25,7 @@ import { ProblemhighlightComponent } from './solvingpage/problemhighlight/proble
 import { TitleComponent } from './shared/title/title.component';
 import { NavComponent } from './nav/nav.component';
 import {FullSizeImgComponent} from './projectpage/projecthighlight/full-size-img/full-size-img.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import {FullSizeImgComponent} from './projectpage/projecthighlight/full-size-img
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

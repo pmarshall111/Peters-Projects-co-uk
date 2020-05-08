@@ -21,7 +21,6 @@ export class HomepageComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.windowHeight = window.innerHeight - 60; //60 is height of navbar
-    console.log(this.windowHeight);
     this.skillsBubble = new Bubble("Skills", "#56ab2f", "#a8e063", 900,700, 120, 0.1,.01);
     this.projectsBubble = new Bubble("Projects", "#c66a36", "#f6876d",90,200,160, 0.1,0);
     this.solvingBubble = new Bubble("Problem Solving", "#248268",  "#4eb176", 800,240, 160,-0.1, 0.5);

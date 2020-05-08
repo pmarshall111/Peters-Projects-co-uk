@@ -1,1 +1,6 @@
-<p>full-size-img works!</p>
+<div class="overlay" (click)="onCloseImg()">
+  <div
+    [ngStyle]="{'background-image': 'url('+imgToMakeBig.link+')'}"
+    class="img">
+  </div>
+</div>
