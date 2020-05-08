@@ -1,12 +1,12 @@
-<div id="carousel" class="carousel slide" data-interval="false">
-  <ol class="carousel-indicators">
-    <li
-      *ngFor="let _ of toDisplay; let i = index"
-      data-target="#carousel"
-      attr.data-slide-to="{{i}}"
-      [ngClass]="i == 0 ? 'active' : ''">
-    </li>
-  </ol>
+<div id="carousel" class="carousel slide" data-interval="false" #carousel>
+<!--  <ol class="carousel-indicators">-->
+<!--    <li-->
+<!--      *ngFor="let _ of toDisplay; let i = index"-->
+<!--      data-target="#carousel"-->
+<!--      attr.data-slide-to="{{i}}"-->
+<!--      [ngClass]="i == 0 ? 'active' : ''">-->
+<!--    </li>-->
+<!--  </ol>-->
   <div class="carousel-inner">
     <div class="carousel-item"
          *ngFor="let media of toDisplay; let i = index"
@@ -15,7 +15,9 @@
         <img *ngIf="media.isImage; else showVideo" src="{{media.link}}">
       </div>
       <ng-template #showVideo>
-        <iframe src="{{media.link}}"></iframe>
+        <div class="img-container">
+          <iframe [src]="vidUrl" [width]="elemWidth" [height]="elemHeight" allowfullscreen></iframe>
+        </div>
       </ng-template>
       <div class="carousel-caption">
         <h4>{{media.title}}</h4>

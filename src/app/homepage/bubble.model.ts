@@ -6,16 +6,22 @@ export class Bubble {
   public speedY: number;
   public spin: number;
   public label: string;
-  colour: string;
+  colour1: string;
+  colour2: string;
 
-  constructor(label: string, colour: string, x: number, y: number, diameter: number, speedX: number, speedY: number) {
+  constructor(label: string, colour1: string, colour2: string, x: number, y: number, diameter: number, speedX: number, speedY: number) {
     this.label = label;
-    this.colour = colour;
+    this.colour1 = colour1;
+    this.colour2 = colour2;
     this.x = x;
     this.y = y;
     this.diameter = diameter;
     this.speedX = speedX;
     this.speedY = speedY;
+  }
+
+  getClass() {
+    return this.label.split(" ").join("").toLowerCase()+"_bubble";
   }
 
   getRadius() {

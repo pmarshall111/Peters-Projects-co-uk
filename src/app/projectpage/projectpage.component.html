@@ -8,8 +8,7 @@
            *ngFor="let p of projects; let i = index;"
       (click)="onChangeProject(i)"
       [ngClass]="selectedProject == p ? 'selected' : ''">
-          <div class="img-container">
-            <img src="{{p.media[0].link}}">
+          <div class="img-container" [ngStyle]="{'background-image': 'url('+p.previewImgLink+')'}" >
           </div>
           <div class="info">
             <h5>{{p.title}}</h5>

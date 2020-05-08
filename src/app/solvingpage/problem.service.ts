@@ -8,7 +8,7 @@ import {problems} from './problems.collection';
 })
 export class ProblemService {
   problems: ProblemModel[] = problems;
-  selectedProblemIdx = 1;
+  selectedProblemIdx = 0;
   problem: BehaviorSubject<ProblemModel> = new BehaviorSubject<ProblemModel>(this.problems[this.selectedProblemIdx]);
 
   nextProblem() {

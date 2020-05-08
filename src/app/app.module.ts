@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
 
 import { FormsModule }   from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -25,7 +24,7 @@ import { ProjecthighlightComponent } from './projectpage/projecthighlight/projec
 import { ProblemhighlightComponent } from './solvingpage/problemhighlight/problemhighlight.component';
 import { TitleComponent } from './shared/title/title.component';
 import { NavComponent } from './nav/nav.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import {FullSizeImgComponent} from './projectpage/projecthighlight/full-size-img/full-size-img.component';
 
 
 @NgModule({
@@ -52,7 +51,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     ProblemhighlightComponent,
     TitleComponent,
     NavComponent,
-    NavbarComponent
+    FullSizeImgComponent
   ],
   imports: [
     BrowserModule,

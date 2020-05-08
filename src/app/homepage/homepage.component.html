@@ -8,7 +8,9 @@
   </div>
   <div class="bubble"
     *ngFor="let bubble of bubbles"
+       [id]="bubble.getClass()"
        [ngStyle]="{'transform': 'translate3d(' + bubble.x +'px, ' + bubble.y+'px, 0px)', 'width': bubble.diameter+'px', 'height': bubble.diameter+'px'}"
+      (click)="scrollToSection(bubble)"
   >
    {{bubble.label}}
   </div>

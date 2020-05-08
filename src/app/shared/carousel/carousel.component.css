@@ -18,3 +18,23 @@ img {
   text-align: center;
   min-height: 100%;
 }
+
+#carousel a {
+  top: 50px;
+  bottom: 50px;
+}
+
+.carousel-caption {
+  pointer-events: none;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.carousel:hover .carousel-caption {
+  opacity: 1;
+}

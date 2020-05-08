@@ -9,6 +9,10 @@ h1, h2, h3 {
 .info-container {
   position: absolute;
   z-index: 15;
+  padding: 10vh 10vw;
+  border: 3px solid #222;
+  pointer-events: none;
+  background: rgba(0,0,0,0.1);
 }
 
 .cover {
@@ -24,9 +28,28 @@ h1, h2, h3 {
   position: absolute;
   top: 0px;
   left: 0px;
-  border-radius: 99999em;
-  background: red;
   border: 3px solid black;
   display: grid;
   place-items: center;
+  font-weight: bold;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 40%, #fcfcfc, #efeff1 66%, #9b5050 100%);
+  user-select: none;
+  cursor: pointer;
+}
+
+#contact_bubble:hover {
+  background: radial-gradient(circle at 50% 40%, #b8334d, #d35d8d 66%, #9b5050 100%)
+}
+
+#problemsolving_bubble:hover {
+  background: radial-gradient(circle at 50% 40%, #248268, #4eb176 66%, #9b5050 100%)
+}
+
+#projects_bubble:hover {
+  background: radial-gradient(circle at 50% 40%, #c66a36, #f6876d 66%, #9b5050 100%)
+}
+
+#skills_bubble:hover {
+  background: radial-gradient(circle at 50% 40%, #56ab2f, #a8e063 66%, #9b5050 100%)
 }
