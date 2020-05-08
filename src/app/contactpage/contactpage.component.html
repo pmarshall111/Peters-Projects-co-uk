@@ -1,12 +1,14 @@
 <main>
-  <app-title title="Contact" blurb="I'm currently looking for internship position and would be very please to hear from you.
+  <app-title title="Contact" blurb="I'm currently looking for internship position and would be very pleased to hear from you.
   Please contact me via my online accounts, or send me a message and I'll get back to you."></app-title>
   <section>
-    <div class="container">
+    <div>
       <app-socialbutton company="LinkedIn"></app-socialbutton>
       <app-socialbutton company="GitHub"></app-socialbutton>
       <app-socialbutton company="Codewars"></app-socialbutton>
+      <app-socialbutton company="LeetCode"></app-socialbutton>
     </div>
-    <app-contactform></app-contactform>
+    <app-contactform *ngIf="!formSubmitted; else showSubmitMsg" (submitted)="onFormSubmit()"></app-contactform>
+    <ng-template #showSubmitMsg><div class="sent-msg">Thanks for getting in touch! Your message has been sent!</div></ng-template>
   </section>
 </main>

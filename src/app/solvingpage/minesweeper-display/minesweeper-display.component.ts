@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {GamesGroup} from './games.group';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {GamesCollection} from './games.collection';
 import {MinesweeperModel} from './minesweeper.model';
 import {colours} from './colourkey/colours';
+import {Subscription} from 'rxjs';
+import {GamesService} from './games.service';
 const {SELECTED, OPENED, NEW_FLAG, SUSP_BOMB, ALL_ITER_SUSP_BOMB, SUSP_SPACE, ALL_ITER_SUSP_SPACE} = colours;
 
 @Component({
@@ -9,32 +11,52 @@ const {SELECTED, OPENED, NEW_FLAG, SUSP_BOMB, ALL_ITER_SUSP_BOMB, SUSP_SPACE, AL
   templateUrl: './minesweeper-display.component.html',
   styleUrls: ['./minesweeper-display.component.css']
 })
-export class MinesweeperDisplayComponent implements OnInit {
+export class MinesweeperDisplayComponent implements OnInit, OnDestroy {
   current: string[][];
   flags: number;
   game: MinesweeperModel;
   toHighlight: {};
   status: string;
   gameNumb: number;
+  totalGames: number;
   worker: Worker;
   timeout: any;
   solvingInterval: number;
   minMaxIntervals: {min: number, max: number};
+  subscription: Subscription;
 
-  constructor() {
+  constructor(private gamesService: GamesService) {
   }
 
   ngOnInit(): void {
-    this.gameNumb = 1;
-    let firstGame = GamesGroup[this.gameNumb];
-    this.current = firstGame.getCopyOfStart();
-    this.flags = firstGame.bombs;
-    this.game = firstGame;
     this.status = 'Not yet started.';
-    this.resetToHighlight();
     this.solvingInterval = 50;
     this.minMaxIntervals = {min: 10, max: 1000};
+    this.subscription = this.gamesService.problem.subscribe(data => {
+      this.game = data;
+      this.current = this.game.getCopyOfStart();
+      this.flags = data.bombs;
+      this.gameNumb = this.gamesService.selectedProblemIdx;
+      this.resetToHighlight();
+    })
+    this.totalGames = this.gamesService.problems.length;
+    console.log(this.game, this.gameNumb, this.totalGames)
   }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+  nextGame() {
+    this.gamesService.nextProblem();
+    this.resetBoard();
+  }
+
+  prevGame() {
+    this.gamesService.prevProblem();
+    this.resetBoard();
+  }
+
 
   getColour(numb: string) {
     switch (numb) {
@@ -86,9 +108,9 @@ export class MinesweeperDisplayComponent implements OnInit {
   }
 
   resetBoard() {
-    this.resetToHighlight();
-    this.current = GamesGroup[this.gameNumb].getCopyOfStart();
     this.pause();
+    this.resetToHighlight();
+    this.current = GamesCollection[this.gameNumb].getCopyOfStart();
     this.initialiseWorker();
   }
 

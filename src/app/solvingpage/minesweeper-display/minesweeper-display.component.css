@@ -15,6 +15,14 @@ div {
   background-position: center;
 }
 
+.game-chooser-controls p {
+  margin: 0;
+}
+
+.game-chooser-controls.controls button:last-of-type {
+  grid-column: 3;
+}
+
 .controls {
   padding: 20px 25%;
   grid-template-columns: 33% 33% 33%;

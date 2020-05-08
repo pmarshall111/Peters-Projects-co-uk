@@ -1,7 +1,7 @@
 import {ProjectModel} from './project.model';
 import {BehaviorSubject} from 'rxjs';
 import { Injectable } from '@angular/core';
-import {projects} from './projects.collection';
+import {projects} from './project.collection';
 
 @Injectable({
   providedIn: 'root',

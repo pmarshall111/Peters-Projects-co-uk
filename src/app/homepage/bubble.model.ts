@@ -6,9 +6,11 @@ export class Bubble {
   public speedY: number;
   public spin: number;
   public label: string;
+  colour: string;
 
-  constructor(label: string, x: number, y: number, diameter: number, speedX: number, speedY: number) {
+  constructor(label: string, colour: string, x: number, y: number, diameter: number, speedX: number, speedY: number) {
     this.label = label;
+    this.colour = colour;
     this.x = x;
     this.y = y;
     this.diameter = diameter;

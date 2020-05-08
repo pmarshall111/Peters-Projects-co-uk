@@ -3,6 +3,7 @@ div {
   grid-template-columns: 1fr;
   place-items: center;
   padding: 50px;
+  padding-top: 200px;
   text-align: center;
   grid-gap: 30px;
 }
