@@ -42,3 +42,9 @@ img {
 .carousel:hover .carousel-caption {
   opacity: 1;
 }
+
+.show-img {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

@@ -11,8 +11,9 @@
     <div class="carousel-item"
          *ngFor="let media of toDisplay; let i = index"
          [ngClass]="i == 0 ? 'active' : ''">
-      <div class="img-container" (click)="showBigImg(media)">
-        <img *ngIf="media.isImage; else showVideo" src="{{media.link}}">
+      <div *ngIf="media.isImage; else showVideo" class="img-container show-img" (click)="showBigImg(media)"
+      [ngStyle]="{'background-image': 'url('+media.link+')'}">
+<!--        <img src="{{media.link}}">-->
       </div>
       <ng-template #showVideo>
         <div class="img-container">

@@ -31,6 +31,12 @@ export const projects: ProjectModel[] = [
         "Project in action!",
         "",
          false
+      ),
+      new ProjectmediaModel(
+        "/assets/finch_ui/report.png",
+        "Markers comments",
+        "",
+        true
       )
     ],
     "/assets/finch_ui/finch.jpg",
@@ -47,10 +53,10 @@ export const projects: ProjectModel[] = [
     'https://github.com/pmarshall111/Football-Betting',
     // tslint:disable-next-line:max-line-length
     [new ProjectmediaModel(
-      '/assets/football_betting/no_img.jpg',
-      'No Image available atm',
+      '/assets/football_betting/code.png',
+      'Some of the Database tests',
       '', true)],
-    "/assets/football_betting/cmd.png",
+    "/assets/football_betting/code.png",
 
     "Languages: Java, SQL\n" +
     "Frameworks: JUnit, HtmlUnit\n"+
@@ -63,7 +69,8 @@ export const projects: ProjectModel[] = [
     "I also wanted the website to be a piece to show off" +
     " on it's own merit, so colliding balls are included on the landing page. The website was designed to be responsive such that it resizes " +
     "it's content" +
-    " based on the screen size of the device it is being viewed on and also uses Web Workers to run any code that make take some time to complete.",
+    " based on the screen size of the device it is being viewed on and also uses Web Workers to run any code that make take some time to complete." +
+    " I uploaded the site to AWS and have registered the site to be crawled by Google.",
     'https://github.com/pmarshall111/PersonalSite',
     // tslint:disable-next-line:max-line-length
     [new ProjectmediaModel('/assets/personal_site/homepage.png',
