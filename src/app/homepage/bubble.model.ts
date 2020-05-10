@@ -39,4 +39,9 @@ export class Bubble {
   getCenterY() {
     return this.y + this.getRadius();
   }
+
+  setPosition(x: number, y: number) {
+    this.x = x;
+    this.y = y;
+  }
 }

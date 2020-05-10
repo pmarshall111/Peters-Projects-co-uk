@@ -49,16 +49,30 @@ input {
   }
 }
 
-.controls p {
+.controls > div {
   grid-column: 1 / span 2;
   margin: 0;
+  display: flex;
 }
 
-.controls label, .controls button:first-of-type {
+.controls p {
+  white-space: pre-wrap;
+}
+
+.controls label, .controls p, .controls button:first-of-type {
   margin: 0;
   justify-self: end;
 }
 
 .controls input, .controls button:last-of-type {
   justify-self: start;
+}
+
+.spinner-border {
+  height: 1rem;
+  width: 1rem;
+}
+
+.final-time {
+  font-weight: bold;
 }

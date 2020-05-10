@@ -13,7 +13,6 @@ import {DateSuffixPipe} from './footer/dateSuffix.pipe';
 import {SocialbuttonComponent} from './shared/socialbutton/socialbutton.component';
 import { SolvingpageComponent } from './solvingpage/solvingpage.component';
 import { SkyscrapersDisplayComponent } from './solvingpage/skyscrapersDisplay/skyscrapersDisplay.component';
-import { SkyscrapersComponent } from './solvingpage/skyscrapers/skyscrapers.component';
 import { MinMaxLimiterDirective } from './shared/min-max-limiter.directive';
 import { MinesweeperDisplayComponent } from './solvingpage/minesweeper-display/minesweeper-display.component';
 import { ColourkeyComponent } from './solvingpage/minesweeper-display/colourkey/colourkey.component';
@@ -25,7 +24,6 @@ import { ProblemhighlightComponent } from './solvingpage/problemhighlight/proble
 import { TitleComponent } from './shared/title/title.component';
 import { NavComponent } from './nav/nav.component';
 import {FullSizeImgComponent} from './projectpage/projecthighlight/full-size-img/full-size-img.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -41,7 +39,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SocialbuttonComponent,
     SolvingpageComponent,
     SkyscrapersDisplayComponent,
-    SkyscrapersComponent,
     MinMaxLimiterDirective,
     MinesweeperDisplayComponent,
     ColourkeyComponent,
@@ -56,8 +53,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    BrowserAnimationsModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

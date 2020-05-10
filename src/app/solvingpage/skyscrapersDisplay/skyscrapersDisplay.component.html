@@ -44,9 +44,13 @@
       </div>
     </div>
     <div class="controls">
-      <p *ngIf="lastIterationTime == -1">Calculate the time to create a solution...</p>
-      <p *ngIf="lastIterationTime > 0">The time to create a solution was: {{lastIterationTime}}s.</p>
-      <p *ngIf="lastIterationTime == 0" style="color: red">No solution was possible!</p>
+      <div>
+        <p>{{getInfoLine()}}</p>
+        <div *ngIf="isCalculating" class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <p *ngIf="lastIterationTime > 0 && !isCalculating" class="final-time"> {{lastIterationTime}}s</p>
+      </div>
       <label>Grid Size: </label>
       <input type="number"
              min="3" max="7"

@@ -36,9 +36,14 @@
         A message is required.
       </div>
     </div>
-
-    <button type="submit" class="btn"
-            [ngClass]="contactForm.form.valid ? 'btn-success' : 'btn-danger no-pointer'"
-            [disabled]="!contactForm.form.valid">Submit</button>
+    <div class="submit-container">
+      <button type="submit" class="btn"
+              [ngClass]="contactForm.form.valid ? 'btn-success' : 'btn-danger no-pointer'"
+              [disabled]="!contactForm.form.valid">Submit</button>
+      <div *ngIf="sendInProgress" class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <p *ngIf="unsuccessfulEmail" class="send-error">Unable to send message. Please try again.</p>
+    </div>
   </form>
 </div>

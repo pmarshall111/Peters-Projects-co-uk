@@ -12,6 +12,7 @@ export class SkyscrapersDisplayComponent implements OnInit {
   clues: {top: number[], left: number[], bottom: number[], right: number[]};
   squares: GridSquareModel[][];
   lastIterationTime: number;
+  isCalculating: boolean;
 
   constructor() { }
 
@@ -27,12 +28,12 @@ export class SkyscrapersDisplayComponent implements OnInit {
     //fill with _ then map is needed as otherwise the same object is used for all positions.
     this.squares = new Array(this.gridSize).fill("_").map(x => new Array(this.gridSize).fill("_").map(x => new GridSquareModel(0, false))); //cannot fill with array or same array is used in all positions.
     this.lastIterationTime = -1;
+    this.isCalculating = false;
   }
 
   changeGridSize(newSize) {
     let toAdd = newSize - this.squares.length;
     this.gridSize = newSize;
-
     let arrsToChange = Object.values(this.clues);
     if (toAdd > 0) {
       arrsToChange.forEach(arr => arr.push(...new Array(toAdd).fill(0)))
@@ -43,7 +44,6 @@ export class SkyscrapersDisplayComponent implements OnInit {
       this.squares.splice(newSize, -toAdd);
       this.squares.forEach(row => row.splice(newSize, -toAdd));
     }
-
     this.resetSquares();
   }
 
@@ -88,13 +88,14 @@ export class SkyscrapersDisplayComponent implements OnInit {
   }
 
   calcSkyscrapers() {
+    this.isCalculating = true;
     let cluesInOrder = [...this.clues.top, ...this.clues.right, ...this.clues.bottom.slice().reverse(), ...this.clues.left.slice().reverse()];
     let grid: number[][] = this.squares.map(row => row.map(square => square.numb));
     console.log(grid);
     if (typeof Worker !== 'undefined') {
       const worker = new Worker('./skyscrapers-display.worker', { type: 'module' });
       worker.onmessage = ({ data }) => {
-        console.log(data)
+        this.isCalculating = false;
         if (data.finishedGrid) {
           this.setGridVals(data.finishedGrid.grid);
           this.lastIterationTime = data.seconds;
@@ -116,5 +117,16 @@ export class SkyscrapersDisplayComponent implements OnInit {
         this.lastIterationTime = 0;
       }
     }
+  }
+
+  getInfoLine(): string {
+    if (this.lastIterationTime == -1) {
+      return "Calculate the time to create a solution..."
+    } else if (this.lastIterationTime == 0) {
+      return "No solution was possible!"
+    } else if (this.lastIterationTime > 0) {
+      return "The time to create a solution was:"
+    }
+    return "";
   }
 }

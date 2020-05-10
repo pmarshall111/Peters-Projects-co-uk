@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contactpage.component.css']
 })
 export class ContactpageComponent implements OnInit {
-  formSubmitted;
+  formSubmitted: boolean;
 
   constructor() { }
 
@@ -15,7 +15,6 @@ export class ContactpageComponent implements OnInit {
   }
 
   onFormSubmit() {
-    console.log("submitted");
     this.formSubmitted = true;
   }
 

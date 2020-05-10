@@ -13,3 +13,16 @@
 .no-pointer {
   cursor: not-allowed;
 }
+
+.submit-container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+  grid-gap: 20px;
+}
+
+.send-error {
+  margin: 0;
+  color: red;
+  font-weight: bold;
+}

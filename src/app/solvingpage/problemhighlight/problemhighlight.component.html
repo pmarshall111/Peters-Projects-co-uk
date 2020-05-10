@@ -9,7 +9,7 @@
     <div class="content">
       <div class="info">
         <h5>About</h5>
-        <p>{{problem.description}}</p>
+        <p [innerHTML]="problem.description"></p> <!--about section uses <sup> tag for superscripts-->
         <h5>How it works</h5>
         <p>{{problem.approach}}</p>
         <div class="social-buttons-cont">
