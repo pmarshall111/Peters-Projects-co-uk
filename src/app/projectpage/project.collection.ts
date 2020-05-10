@@ -34,7 +34,7 @@ export const projects: ProjectModel[] = [
       ),
       new ProjectmediaModel(
         "/assets/finch_ui/report.png",
-        "Markers comments",
+        "Marker's comments",
         "",
         true
       )

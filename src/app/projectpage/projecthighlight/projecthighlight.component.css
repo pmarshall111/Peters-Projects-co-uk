@@ -1,8 +1,13 @@
 .outside {
-  margin: 40px;
   border-radius: 20px;
   display: grid;
   grid-template-columns: auto 1fr auto;
+}
+
+@media (min-width: 650px) {
+  .outside {
+    margin: 40px;
+  }
 }
 
 .content-container {
@@ -78,10 +83,21 @@
   align-self: center;
 }
 
+/*when screen is small have the arrows tight into the content, when bigger add spacing*/
 .arrow-prev {
-  justify-items: start;
+  justify-items: end;
 }
 
 .arrow-next {
-  justify-items: end;
+  justify-items: start;
+}
+
+@media (min-width: 650px) {
+  .arrow-prev {
+    justify-items: start;
+  }
+
+  .arrow-next {
+    justify-items: end;
+  }
 }

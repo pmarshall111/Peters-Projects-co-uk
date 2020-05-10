@@ -2,6 +2,11 @@
 /*  margin: 100px 0px;*/
 /*}*/
 
+.simulate-nav {
+  width: 100%;
+  height: 60px;
+}
+
 h1, h2, h3 {
   text-align: center;
 }
@@ -21,7 +26,6 @@ h1, h2, h3 {
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-top: 60px;
 }
 
 .bubble {
@@ -38,18 +42,18 @@ h1, h2, h3 {
   cursor: pointer;
 }
 
-#contact_bubble:hover {
-  background: radial-gradient(circle at 50% 40%, #b8334d, #d35d8d 66%, #9b5050 100%)
+#problemsolving_bubble:hover {
+  background: radial-gradient(circle at 50% 40%, #E41A00, #D72500 66%, #9b5050 100%)
 }
 
-#problemsolving_bubble:hover {
-  background: radial-gradient(circle at 50% 40%, #248268, #4eb176 66%, #9b5050 100%)
+#contact_bubble:hover {
+  background: radial-gradient(circle at 50% 40%, #2DA5C1, #31ADCA 66%, #9b5050 100%)
 }
 
 #projects_bubble:hover {
-  background: radial-gradient(circle at 50% 40%, #c66a36, #f6876d 66%, #9b5050 100%)
+  background: radial-gradient(circle at 50% 40%, #F2C53F, #FFBE36 66%, #9b5050 100%)
 }
 
 #skills_bubble:hover {
-  background: radial-gradient(circle at 50% 40%, #56ab2f, #a8e063 66%, #9b5050 100%)
+  background: radial-gradient(circle at 50% 40%, #A2E94A, #a8e063 66%, #9b5050 100%)
 }

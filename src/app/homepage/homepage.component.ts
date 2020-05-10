@@ -39,8 +39,8 @@ export class HomepageComponent implements OnInit, AfterViewInit {
     this.skillsBubble.setPosition(0,0);
     this.projectsBubble.setPosition(Math.max(screenWidth/2,this.skillsBubble.diameter+10), this.skillsBubble.diameter + 10);
     this.solvingBubble.setPosition(0, this.skillsBubble.diameter + 10);
-    this.projectsBubble.setPosition(Math.max(screenWidth/2,this.skillsBubble.diameter+this.projectsBubble.diameter+20),
-                                this.skillsBubble.diameter + 10);
+    this.contactBubble.setPosition(Math.max(screenWidth/2,this.skillsBubble.diameter+this.projectsBubble.diameter+20),
+                                this.skillsBubble.diameter+this.projectsBubble.diameter + 20);
   }
 
   @HostListener('window:resize', ['$event'])
