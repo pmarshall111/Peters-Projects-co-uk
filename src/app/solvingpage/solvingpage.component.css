@@ -1,8 +1,14 @@
 .links {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 20px;
   align-items: center;
+}
+
+@media (min-width: 500px) {
+  .links {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .links > *:first-child {

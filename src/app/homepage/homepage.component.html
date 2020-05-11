@@ -7,12 +7,13 @@
     <h2>Hello, my name is</h2>
     <h1>Peter Marshall</h1>
     <h3>I'm a Computer Science Student</h3>
+    <h4 (click)="scrollToSection('Contact')">Currently looking for a position!</h4>
   </div>
   <div class="bubble"
     *ngFor="let bubble of bubbles"
        [id]="bubble.getId()"
        [ngStyle]="{'transform': 'translate3d(' + bubble.x +'px, ' + bubble.y+'px, 0px)', 'width': bubble.diameter+'px', 'height': bubble.diameter+'px'}"
-      (click)="scrollToSection(bubble)"
+      (click)="scrollToSection(bubble.label)"
   >
    {{bubble.label}}
   </div>

@@ -67,10 +67,11 @@ export const projects: ProjectModel[] = [
     'Website',
     "This website was made to showcase previous projects and problems I've tackled in a presentable and easy to digest way. However, " +
     "I also wanted the website to be a piece to show off" +
-    " on it's own merit, so colliding balls are included on the landing page. The website was designed to be responsive such that it resizes " +
-    "it's content" +
-    " based on the screen size of the device it is being viewed on and also uses Web Workers to run any code that make take some time to complete." +
-    " I uploaded the site to AWS and have registered the site to be crawled by Google.",
+    " on it's own merit, so I included some colliding balls on the landing page that use the proper equations for elastic collisions to calculate " +
+    "trajectories. " +
+    "Usability was improved by making the website responsive " +
+    "and also running any time consuming code in Web Workers so that user events are not blocked." +
+    " Finally, I uploaded the site onto the cloud using AWS (S3, Route53, CloudFront and ACM) and enabled the content to be sent securely through HTTPS.",
     'https://github.com/pmarshall111/PersonalSite',
     // tslint:disable-next-line:max-line-length
     [new ProjectmediaModel('/assets/personal_site/homepage.png',
@@ -78,6 +79,7 @@ export const projects: ProjectModel[] = [
       '', true)],
     "/assets/personal_site/homepage.png",
     "Languages: TypeScript, HTML, CSS\n"+
-    "Frameworks: Angular, Bootstrap",
+    "Frameworks: Angular, Bootstrap\n"+
+    "Cloud: AWS",
     true)
 ];

@@ -60,8 +60,8 @@ export class HomepageComponent implements OnInit, AfterViewInit {
     this.bubbleCollisionService.startControl();
   }
 
-  scrollToSection(bubble: Bubble) {
-    switch(bubble.label) {
+  scrollToSection(label: string) {
+    switch(label) {
       case "Skills":
         document.querySelector('#skills').scrollIntoView();
         break;

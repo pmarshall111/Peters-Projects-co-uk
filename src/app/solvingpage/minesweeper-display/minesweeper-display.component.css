@@ -76,3 +76,14 @@ p {
   text-align: center;
   vertical-align: center;
 }
+
+@media (max-width: 500px) {
+  #playSpeed {
+    max-width: 100px;
+  }
+}
+
+/*needed for viewing on android - input range element shows with black background*/
+#playSpeed {
+  background: none;
+}
