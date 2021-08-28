@@ -8,6 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "build-prod": "ng build --prod",
     "aws-deploy": "aws s3 sync dist/personalSite/ s3://petersprojects.co.uk"
   },
   "private": true,
