@@ -1,6 +1,6 @@
 /// <reference lib="webworker" />
-import {Iterable} from '../../../../../../WebstormProjects/Minesweeper/iterable/Iterable';
-import {InfoForSite} from '../../../../../../WebstormProjects/Minesweeper/iterable/InfoForSite';
+import {Iterable} from '../../../../../../../WebstormProjects/Minesweeper/iterable/Iterable';
+import {InfoForSite} from '../../../../../../../WebstormProjects/Minesweeper/iterable/InfoForSite';
 
 let iter;
 addEventListener('message', ({ data }) => {

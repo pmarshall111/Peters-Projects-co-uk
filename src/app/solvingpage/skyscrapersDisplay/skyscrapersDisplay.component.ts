@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, OnChanges, SimpleChanges} from '@angular/core';
-import {Solver} from '../../../../../../WebstormProjects/Skyscrapers/Solver';
+import {Solver} from '../../../../../../../WebstormProjects/Skyscrapers/Solver';
 import {GridSquareModel} from './gridSquareModel';
 
 @Component({

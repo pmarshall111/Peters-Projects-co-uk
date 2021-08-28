@@ -46,10 +46,11 @@ export const projects: ProjectModel[] = [
   new ProjectModel(
     'Football betting',
     'CLI application',
-    "This app uses a logistic regression algorithm to predict the probabilities of results of football matches. If these probabilities " +
+    "This app uses a neural network to predict the probabilities of results of football matches. If these probabilities " +
     "predicted by the app are" +
-    " higher than the probabilities offered by betting companies, an email is sent to me and I can decide whether to place a bet or not. Currently" +
-    " this project is undergoing a database refactor.",
+    " higher than the probabilities offered by betting companies, a bet is automatically placed for me. The model is trained on" +
+    " over 8000 games with data scraped from different sources and then combined. Contains 46 tests to keep the process as accurate" +
+    " as possible.",
     'https://github.com/pmarshall111/Football-Betting',
     // tslint:disable-next-line:max-line-length
     [new ProjectmediaModel(
@@ -57,10 +58,9 @@ export const projects: ProjectModel[] = [
       'Some of the Database tests',
       '', true)],
     "/assets/football_betting/code.png",
-
     "Languages: Java, SQL\n" +
-    "Frameworks: JUnit, HtmlUnit\n"+
-    "Database: Sqlite3",
+    "Frameworks: JUnit, Selenium, HtmlUnit, DeepLearning4J, JDBC\n"+
+    "Database: MySQL",
     true),
   new ProjectModel(
     'Peter\'s Projects',

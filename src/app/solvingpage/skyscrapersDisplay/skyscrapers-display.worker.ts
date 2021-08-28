@@ -1,6 +1,6 @@
 /// <reference lib="webworker" />
 
-import {Solver} from '../../../../../../WebstormProjects/Skyscrapers/Solver';
+import {Solver} from '../../../../../../../WebstormProjects/Skyscrapers/Solver';
 
 addEventListener('message', ({ data }) => {
   console.log(data);
