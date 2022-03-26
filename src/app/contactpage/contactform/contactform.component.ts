@@ -27,13 +27,13 @@ export class ContactformComponent implements OnInit {
     if (contactForm.valid) {
       this.sendInProgress = true;
       this.unsuccessfulEmail = false;
-      let {user_id, template_id} = keys;
+      let {user_id, template_id, service_id} = keys;
       let templateParams = {
         from_name: this.fullName,
         from_email: this.email,
         message_html: this.message
       };
-      emailjs.send("gmail", template_id, templateParams, user_id)
+      emailjs.send(service_id, template_id, templateParams, user_id)
         .then((result: EmailJSResponseStatus) => {
           this.sendInProgress = false;
           this.submitted.emit(true);

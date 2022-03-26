@@ -3,10 +3,12 @@ import {SkillModel} from './skill.model';
 
 export const skillsCollection =
   [
-    new SkillModel("Java", [
+    new SkillModel("JVM", [
+      new LibraryModel("Java", "A language built on the JVM."),
       new LibraryModel("Kotlin", "A language built on the JVM."),
-      new LibraryModel("Spring", "A library used to streamline the development of APIs."),
-      new LibraryModel("JUnit", "A unit testing library.")
+      new LibraryModel("Spring Boot", "A library used to streamline the development of APIs."),
+      new LibraryModel("JUnit", "A unit testing library."),
+      new LibraryModel("TestContainers", "An integration testing library.")
     ]),
     new SkillModel("JavaScript", [
       new LibraryModel("TypeScript", "A language that allows type checking in JavaScript. This website is written in TypeScript!"),
@@ -19,9 +21,10 @@ export const skillsCollection =
       new LibraryModel("Firestore", "A NoSQL database.")
     ]),
     new SkillModel("Ops", [
-      new LibraryModel("Debian", "An open source, UNIX based operating system."),
+      new LibraryModel("Debian Linux", "An open source, UNIX based operating system."),
       new LibraryModel("Docker", "An open source platform for delivering applications in containers."),
       new LibraryModel("Kubernetes", "An open source platform for managing containers."),
-      new LibraryModel("AWS", "A cloud platform.")
+      new LibraryModel("AWS", "A cloud platform."),
+      new LibraryModel("GitHub Actions", "A platform used to create CI/CD pipelines.")
 ])
 ]
