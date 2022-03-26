@@ -93,7 +93,7 @@ export class SkyscrapersDisplayComponent implements OnInit {
     let grid: number[][] = this.squares.map(row => row.map(square => square.numb));
     console.log(grid);
     if (typeof Worker !== 'undefined') {
-      const worker = new Worker('./skyscrapers-display.worker', { type: 'module' });
+      const worker = new Worker(new URL('./skyscrapers-display.worker', import.meta.url), { type: 'module' });
       worker.onmessage = ({ data }) => {
         this.isCalculating = false;
         if (data.finishedGrid) {

@@ -136,7 +136,7 @@ export class MinesweeperDisplayComponent implements OnInit, OnDestroy {
   }
 
   initialiseWorker() {
-    this.worker = new Worker('./minesweeper.worker', {type: 'module'});
+    this.worker = new Worker(new URL('./minesweeper.worker', import.meta.url), {type: 'module'});
     this.worker.postMessage({newGame: this.game});
 
     this.worker.onmessage = ({data}) => {
