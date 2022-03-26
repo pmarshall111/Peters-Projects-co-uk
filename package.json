@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build-prod": "ng build --configuration production",
-    "aws-deploy": "aws s3 sync dist/personalSite/ s3://petersprojects.co.uk"
+    "aws-deploy": "aws s3 sync dist/personalSite/ s3://petersprojects.co.uk; aws cloudfront create-invalidation --distribution-id E38JANAYGX2YHL --paths '/*'"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +27,7 @@
     "bootstrap": "^4.4.1",
     "emailjs-com": "^2.4.1",
     "jquery": "^3.4.1",
+    "npm": "^8.5.5",
     "rxjs": "~6.5.4",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
